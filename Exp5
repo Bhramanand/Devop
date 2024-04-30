@@ -1,0 +1,42 @@
+Prerequisites:
+Install Jenkins on your server.
+Install XAMPP on your server.
+Step 1: Set up Jenkins:
+Open Jenkins in your web browser.
+Install necessary plugins:
+Go to "Manage Jenkins" > "Manage Plugins" > "Available" tab.
+Search and install the following plugins:
+Git plugin
+Pipeline plugin
+Configure Git:
+Go to "Manage Jenkins" > "Global Tool Configuration".
+Under "Git installations", click "Add Git".
+Provide a name and set the path to the Git executable.
+Click "Save" to apply the changes.
+Step 2: Set up XAMPP:
+Install XAMPP on your server.
+Start the Apache server.
+Step 3: Create a GitHub Repository:
+Create a new GitHub repository to store your HTML files.
+Step 4: Create a Jenkins Pipeline Job:
+Click on "New Item" on the Jenkins dashboard.
+Enter a name for your pipeline job and select "Pipeline" as the type.
+Click "OK" to create the job.
+In the job configuration page:
+Under the "Pipeline" section, choose "Pipeline script from SCM".
+Select Git as the SCM and enter the repository URL.
+Optionally, specify the branch to build.
+Save the configuration.
+Step 5: Write the Jenkins Pipeline Script:
+Open the pipeline job configuration.
+In the pipeline script section, paste the scripted pipeline script provided earlier.
+Customize the script as needed, replacing the placeholder repository URL with your actual GitHub repository URL.
+Step 6: Run the Pipeline:
+Trigger the pipeline manually or configure it to run automatically when changes are pushed to the repository.
+Monitor the pipeline execution in the Jenkins console output.
+Step 7: Verify Deployment:
+After the pipeline completes, verify that the HTML files are deployed to the XAMPP htdocs directory.
+Access the HTML files via a web browser to ensure they are accessible.
+Step 8: Set Up Webhooks (Optional):
+To automate the pipeline execution on code changes, set up webhooks in your GitHub repository to trigger Jenkins builds.
+In the GitHub repository settings, go to "Webhooks" and add a new webhook with the Jenkins URL and the appropriate payload URL.

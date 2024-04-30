@@ -69,6 +69,24 @@ print("Sample test successful")
 
 
 
+Exp 7:Create an image of php project and push on Dockerhub repository
+
+For dockerfile:
+FROM php:7.4-apache
+
+# Copy the PHP files into the container
+COPY . /var/www/html/
+
+# Expose port 80 to the outside world
+EXPOSE 80
+
+For cmd:
+cd C:\New folder
+docker build -t devops .
+docker run -d -p 8888:80 devops
+docker tag devops:latest bhramanandsethi/devops:latest
+docker push bhramanandsethi/devops:latest
+
 Exp 8: Demonstrate use of docker commands to pull ubuntu official image, create a file and push updated image on Dockerhub:
 
 Commands to execute in cmd
